@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+    <h2>
+        Simulador de depósito / Retirada
+    </h2>
+    <br>
+    <label>Valor a ser Depositado: </label>
+    <input id="ipt_valordeposito">
+    <br>
+    <label>Valor a ser Retirado: </label>
+    <input id="ipt_valorRetirada">
+    <br>
+    <button onclick="retirada()">Retirada</button>
+    <button onclick="deposito()">Depósito</button>
+
+</body>
+</html>
+<script>
+    var carteira = 0
+    function retirada(){
+        carteira = carteira - (Number(ipt_valorRetirada.value));
+        // Retirada de R$X efetuada! Saldo atual: R$Y 
+        alert("Retirada de R$" + ipt_valorRetirada.value + " efetuada! Saldo atual: R$" + carteira);
+        
+    }
+    
+    function deposito(){
+        carteira = (carteira + Number(ipt_valordeposito.value));
+        //  Depósito de R$X efetuado! Saldo atual: R$Y 
+        alert("Depósito de R$" + ipt_valordeposito.value + " efetuado! Saldo atual: R$" + carteira);
+        
+    }
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 16</title>
+</head>
+<body>
+
+    Informe a quantidade de chocolates:
+    <input type="number" id="ipt_quantidade">
+    <br>
+    <button onclick="calcular()">Compra</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var quantidade = Number(ipt_quantidade.value);
+        var valorChocolate = 3.00;
+        var desconto = 2.50;
+
+        div_mensagem.innerHTML = `O valor da sua compra foi de R$${quantidade * valorChocolate}`
+        if(quantidade >= 12){
+            div_mensagem.innerHTML = `O valor da sua compra foi de R$${quantidade * desconto}`
+        }
+
+
+
+    }
+
+
+
+</script>

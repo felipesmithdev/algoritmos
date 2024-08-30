@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o primeiro numero:
+    <input id="ipt_n1">
+    <br>
+    Insira o segundo numero:
+    <input id="ipt_n2">
+    <br>
+    <button onclick="soma()">Soma</button>
+    <button onclick="diferenca()">Diferença</button>
+    <button onclick="produto()">Produto</button>
+    <button onclick="razao()">Razão</button>
+
+</body>
+</html>
+<script>
+        function soma(){
+            alert("A soma entre " + ipt_n1.value + " e " + ipt_n2.value + " é " + (Number(ipt_n1.value) + Number(ipt_n2.value)));
+        }
+        function diferenca(){
+            alert("A diferença entre " + ipt_n1.value + " e " + ipt_n2.value + " é " + (Number(ipt_n1.value) - Number(ipt_n2.value)));
+        }
+        function produto(){
+            alert("O produto entre " + ipt_n1.value + " e " + ipt_n2.value + " é " + (Number(ipt_n1.value) * Number(ipt_n2.value)));
+        }
+        function razao(){
+            alert("A razão entre " + ipt_n1.value + " e " + ipt_n2.value + " é " + (Number(ipt_n1.value / Number(ipt_n2.value))));
+        }
+</script>

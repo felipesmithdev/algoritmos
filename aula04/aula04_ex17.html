@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 17</title>
+</head>
+<body>
+
+    Informe a frequência do aluno:
+    <input type="number" id="ipt_frequencia">
+    <br>
+    <button onclick="analisar()">Analisar frequência</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var frequencia = Number(ipt_frequencia.value);
+
+            if(frequencia >= 50){
+                div_mensagem.innerHTML = `<img src="https://thumbs.dreamstime.com/b/estudiante-reading-books-showing-estudioso-34211523.jpg" alt="estudioso">`
+            } else {
+                div_mensagem.innerHTML = `<img src="https://st2.depositphotos.com/7874342/11217/v/950/depositphotos_112170650-stock-illustration-hiking-tourists-young-family-couple.jpg" alt="turista">`
+            }
+    }
+
+
+</script>

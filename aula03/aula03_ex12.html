@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    <h1>Pizza yollo</h1>
+    <p>Informe o Sabor da pizza</p>
+    <input id="ipt_saborpizza">
+    <p>Informe o valor da pizza</p>
+    <input id="ipt_valordapizza">
+    <p>Informe a quantidade de amigos que irão comer</p>
+    <input id="ipt_qtdamigos">
+    <br>
+    <button onclick="calcular()">Ver valor por amigo</button>
+    <div id="exibir_mensagem"></div>
+
+</body>
+</html>
+<script>
+    function calcular(){
+        var sabor = ipt_saborpizza.value;
+        var valorPizza = Number(ipt_valordapizza.value);
+        var qtdAmigos = Number(ipt_qtdamigos.value);
+        var taxa = valorPizza * 0.10;
+        var divisaoDoValor = (valorPizza + taxa) / qtdAmigos;
+        
+    exibir_mensagem.innerHTML = `Cada amigo vai colaborar com R$${divisaoDoValor} para a pizza de ${sabor}.` 
+    }
+
+</script>

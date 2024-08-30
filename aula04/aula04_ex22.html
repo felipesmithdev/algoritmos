@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+
+    Informe o nome do passageiro:
+    <input type="text" id="ipt_nome">
+    <br>
+    Informe a distancia total em KMH:
+    <input type="number" id="ipt_distancia">
+    <br>
+    Informe a bandeira(em numero):
+    <input type="number" min="1" max="3" id="ipt_bandeira">
+    <br>
+    Informe a hora da corrida:
+    <input type="number" min="0" max="23" id="ipt_hora">
+    <br>
+    <button onclick="calcular()">Calcular corrida</button>
+    <div id="div_mensagem1"></div>
+
+</body>
+</html>
+
+<script>
+
+function calcular(){
+
+    var nome = ipt_nome.value;
+    var distancia = Number(ipt_distancia.value);
+    var valor = Number(ipt_distancia.value) * 1.25;
+    var bandeira = Number(ipt_bandeira.value);
+    var hora = Number(ipt_hora.value);
+
+     div_mensagem1.innerHTML = `Olá ${nome}, sua corrida será na bandeira ${bandeira}, percorrerá ${distancia} KM e o total da corrida será R$${valor + (valor *(bandeira * 0.05))}
+     `
+     if(hora >= 7){
+          div_mensagem1.innerHTML = `Olá ${nome}, sua corrida será na bandeira ${bandeira}, percorrerá ${distancia} KM e o total da corrida será R$${valor + (valor * (bandeira * 0.10))}
+     `
+     }
+     if(hora >=13) {
+          div_mensagem1.innerHTML = `Olá ${nome}, sua corrida será na bandeira ${bandeira}, percorrerá ${distancia} KM e o total da corrida será R$${valor + (valor * (bandeira * 0.15))}
+     `
+     }
+
+    // //bandeira 
+    // var bandeira1_06 = distancia + (distancia * 0.05);
+    // var bandeira_12 = distancia + (distancia * 0.10);
+    // var bandeira_23 = distancia + (distancia * 0.15);
+    
+    // //bandeira 2
+    // var bandeira2_06 = distancia + (distancia * 0.10);
+    // var bandeira2_12 = distancia + (distancia * 0.20);
+    // var bandeira2_23 = distancia + (distancia * 0.30);
+
+    // //bandeira 3
+    // var bandeira3_06 = distancia = (distancia * 0.15);
+    // var bandeira3_12 = 3distancia = (distancia * 0.30);
+    // var bandeira3_2 = distancia = (distancia * 0.45);
+
+}
+</script>

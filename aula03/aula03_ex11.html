@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <p>insira um número: </p>
+    <input id="ipt_numero" type="number">
+    <br>
+    <button onclick="tabuada()">Ver Tabuada</button>
+    <div id="div_apresentartabuada"></div>
+</body>
+</html>
+<script>
+    function tabuada(){
+        var numero = Number(ipt_numero.value);
+        var x1 = numero * 1;
+        var x2 = numero * 2;
+        var x3 = numero * 3;
+        var x4 = numero * 4;
+        var x5 = numero * 5;
+        var x6 = numero * 6;
+        var x7 = numero * 7;
+        var x8 = numero * 8;
+        var x9 = numero * 9;
+        
+        div_apresentartabuada.innerHTML = `${numero} x 1 = ${x1}<br>
+        ${numero} x 2 = ${x2}<br>
+        ${numero} x 3 = ${x3}<br>
+        ${numero} x 4 = ${x4}<br>
+        ${numero} x 5 = ${x5}<br>
+        ${numero} x 6 = ${x6}<br>
+        ${numero} x 7 = ${x7}<br>
+        ${numero} x 8 = ${x8}<br>
+        ${numero} x 9 = ${x9}<br>`
+
+    }
+
+
+
+</script>

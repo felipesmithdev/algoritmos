@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 09</title>
+</head>
+<body>
+
+    Informe a última série (SITCOM) que você assistiu:
+    <input type="text" id="ipt_serie">
+    <br>
+    Informe o total de episódios assistidos:
+    <input type="number" id="ipt_episodiosAssistidos">
+    <br>
+    <button onclick="verificarNivel()">Verificar Nível</button>
+    <div id="div_mensagem"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function verificarNivel() {
+        var serie = ipt_serie.value;
+        var epAssistidos = Number(ipt_episodiosAssistidos.value);
+        var tempoEp = 22;
+        var totalEpisodio = (tempoEp * epAssistidos) / 60;
+
+        div_mensagem.innerHTML = `Vejo que você gosta da série ${serie} <br>`
+
+        if (totalEpisodio > 30) {
+            div_mensagem.innerHTML += `Uau, você realmente gosta dessa série!`
+        }
+
+    }
+
+
+</script>

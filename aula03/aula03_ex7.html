@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>\exercicio 2</title>
+</head>
+<body>
+
+    <h2>Simulador de pagamento / recebimento </h2>
+    <br>
+    <button onclick="receber()"> Receber R$ 100 </button>
+    <button onclick="pagar()"> Pagar R$ 50 </button>
+    <div id="div_mensagemReceber"></div>
+    <div id="div_mensagemPagar"></div>
+    
+</body>
+</html>
+<script>
+    var carteira = 0;
+    function receber(){
+        // exiba a mensagem “Transferência de R$100 recebida! Saldo atual: R$Y”. 
+        carteira = carteira + 100;
+        // alert("Transferência de R$100 recebida ! Saldo atual: " + carteira);
+        div_mensagemReceber.innerHTML = `Transferência de R$100 recebida! Saldo atual: ${carteira}`
+    }
+    function pagar (){
+        // exiba a mensagem “Pagamento de R$50 efetuado! Saldo atual: R$Y”. 
+        carteira = carteira - 50;
+       // alert("Pagamento de R$50 efetuado! Saldo atual: " + carteira);
+       div_mensagemPagar.innerHTML = `Pagamento de R$50 efetuado! Saldo atual: ${carteira}`
+    }
+
+
+</script>
