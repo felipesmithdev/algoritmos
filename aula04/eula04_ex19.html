@@ -12,7 +12,7 @@
     <br>
     <button onclick="verificar()">Verificar clima</button>
     <div id="div_mensagem"></div>
-    
+
 </body>
 </html>
 
@@ -21,12 +21,15 @@
     function verificar(){
         var temperatura = Number(ipt_temperatura.value);
 
+        div_mensagem.innerHTML = `<p>Apropriada para conservar alimento</p>
+        <img src="https://www.iped.com.br/_upload/content/2015/03/03/identificar-alimentos-bom-estado.jpg" alt="">`
+
+        if(temperatura >= 10){
+            div_mensagem.innerHTML = `<p>Inapropriada para conservar alimento</p>
+            <img src="https://www.eldiariodelapampa.com.ar/img/publicaciones/2022/04/29/alta/31431_0xp.jpg" alt="">`
+        }
+        
 
     }
-//  Apropriada p/ conservar alimento - Caso a temperatura for menor que 10 
-
-// Inapropriada p/ conservar alimento - Caso a temperatura for a partir de 10 
-
-//c) Em caso de temperatura apropriada, exiba a figura de um alimento em bom estado. Caso contrário, exiba a imagem de um alimento estragado 
 
 </script>
