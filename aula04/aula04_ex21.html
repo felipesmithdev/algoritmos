@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 21</title>
+</head>
+<body>
+
+    Informe a sua meta econômica:
+    <input type="number" id="ipt_meta">
+    <br>
+    Informe quanto você tem guardado:
+    <input type="number" id="ipt_guardado">
+    <br>
+    <button onclick="calcular()">Analisar economia</button>
+    <div id="div_mensagem"></div>
+    <div id="div_mensagem2"></div>
+
+</body>
+</html>
+<script>
+
+      function calcular(){
+        var meta = Number(ipt_meta.value);
+        var dinheiro_guardado =  Number(ipt_guardado.value);
+        
+        var diferença = dinheiro_guardado - meta;
+        var ainda_falta = meta - dinheiro_guardado;
+
+        div_mensagem.innerHTML = `Parabéns, meta alcançada!`
+        div_mensagem2.innerHTML = ``
+
+        if (dinheiro_guardado > meta){
+        div_mensagem.innerHTML = `Parabéns, meta alcançada!`
+        div_mensagem2.innerHTML = `Meta ultaprassada em ${diferença}`
+        }
+
+        if (dinheiro_guardado < meta){
+            div_mensagem.innerHTML = `Força! Ainda em busca da meta! Falta ${ainda_falta}`
+            div_mensagem2.innerHTML = ``
+        }
+
+    }
+
+
+
+
+</script>
