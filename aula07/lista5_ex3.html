@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03</title>
+</head>
+<body>
+
+    Informe a temperatura:
+    <input type="number" id="ipt_temperatura">
+    <br>
+    <button onclick="analisar()">Analisar clima</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+
+    function analisar(){
+        var temperatura = Number(ipt_temperatura.value);
+
+        if (temperatura <= 13){
+            div_mensagem.innerHTML = `Congelante`
+        } else if (temperatura <= 21){
+            div_mensagem.innerHTML = `Com frio`
+        } else if (temperatura <= 24){
+            div_mensagem.innerHTML = `Confortável`
+        } else if (temperatura <= 31){
+            div_mensagem.innerHTML = `Com calor`
+        } else {
+            div_mensagem.innerHTML = `Calor escaldante`
+        }
+
+    }
+
+
+
+</script>

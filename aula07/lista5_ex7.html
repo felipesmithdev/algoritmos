@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07</title>
+</head>
+<body>
+
+    Informe a quantidade de pães comidos no dia:
+    <input type="number" id="ipt_paes">
+    <br>
+    Informe a quantidade de pacotes de bolachas comidos no dia:
+    <input type="number" id="ipt_bolacha">
+    <br>
+    Informe a quantidade de copos de achocolatado tomados por dia:
+    <input type="number" id="ipt_achocolatado">
+    <br>
+    <button onclick="verificar()">Verificar calorias</button>
+    <br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+
+    function verificar(){
+        var paes = Number(ipt_paes.value);
+        var bolachas = Number(ipt_bolacha.value);
+        var achocolatado = Number(ipt_achocolatado.value);
+
+        var totalpao = paes * 50;
+        var totalbolacha = bolachas * 80;
+        var totalachocolatado = achocolatado * 70;
+
+        var calorias_total = totalpao + totalbolacha + totalachocolatado;
+
+        if (calorias_total <= 199){
+            div_mensagem.innerHTML = `Parabéns, vai ficar em forma!`
+        } else if (calorias_total <= 400){
+            div_mensagem.innerHTML = `Cuidado, vai ficar menos saudável`
+        } else {
+            div_mensagem.innerHTML = `Alerta crítico de saúde !!!`
+        }
+
+
+    }
+
+
+
+
+
+</script>

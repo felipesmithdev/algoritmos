@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06</title>
+</head>
+<body>
+
+    <input type="text" id="ipt_time">
+    <br>
+    <button onclick="falar()">Fale sobre esse time</button>
+    <br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+
+    function falar(){
+        var time = ipt_time.value;
+
+        if(time == "corinthians"){
+            div_mensagem.innerHTML = `<span style="color:white; background-color: black">Salve o corinthians</span>`
+        } else if (time == "palmeiras"){
+            div_mensagem.innerHTML = `<span style="color:white; background-color: green">Salve o Alviverde imponente</span>`
+        } else if (time == "santos"){
+            div_mensagem.innerHTML = `<span style="color:black; background-color: white">Agora quem da a bola é o santos</span>`
+        } else {
+            div_mensagem.innerHTML = `<span style="color:red, background-color: black">Salve o tricolor paulista</span> `
+
+        }
+    }
+
+
+
+
+</script>
