@@ -26,9 +26,10 @@
             div_mensagem.innerHTML = `<span style="color:white; background-color: green">Salve o Alviverde imponente</span>`
         } else if (time == "santos"){
             div_mensagem.innerHTML = `<span style="color:black; background-color: white">Agora quem da a bola é o santos</span>`
-        } else {
+        } else if(time == 'são paulo') {
             div_mensagem.innerHTML = `<span style="color:red, background-color: black">Salve o tricolor paulista</span> `
-
+        } else {
+            alert("Time inválido")
         }
     }
 

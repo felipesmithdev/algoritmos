@@ -24,24 +24,22 @@
         var meta = Number(ipt_meta.value);
         var guardado = Number(ipt_guardado.value);
 
-        var ultrapassado = guardado - meta;
-        var aindafalta = meta - guardado;
-
-
+      
         if (guardado == meta){
             div_mensagem.innerHTML = `Parabéns, meta alcançada!`
             div_mensagem2.innerHTML = ``
         } else if (guardado <= meta){
+            var aindafalta = meta - guardado;
             div_mensagem.innerHTML = `Força! Ainda em busca da meta! Falta ${aindafalta}`
             div_mensagem2.innerHTML = ``
         } else if (guardado > meta){
+            var ultrapassado = guardado - meta;
             div_mensagem.innerHTML = `Parabéns, meta alcançada!`
             div_mensagem2.innerHTML = `Meta ultrapassada em ${ultrapassado}`
 
-    }
+        }
 
 
-    }
-
+}
 
 </script>

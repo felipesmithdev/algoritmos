@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Informe se o pagamento será feito em Dinheiro, Cartão de crédito, Cartão de débito ou boleto: <br>
+    <input type="text" id="ipt_forma_pagamento">
+    <br>
+    <button onclick="analisar()">Analisar compra</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var forma = ipt_forma_pagamento.value;
+
+        if(forma == "cartão de crédito" || forma == "boleto"){
+            div_mensagem.innerHTML = `Pagamento poderá ser parcelado`
+        } else if (forma == "dinheiro" || forma == "cartão de débito"){
+            div_mensagem.innerHTML = `Você terá que pagar a vista`
+        } else {
+            div_mensagem.innerHTML = `Forma de pagamento inválida`
+        }
+    }
+
+
+</script>
