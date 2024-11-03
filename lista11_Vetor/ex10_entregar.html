@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+
+    Informe a linha de onibus: <br>
+    <input type="text" id="input_linha"> <br>
+    <button onclick="gravar()">Gravar busão</button> <br>
+    Pesquisar linha:
+    <input type="text" id="input_pesquisar"> <br>
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+
+    var lista_linha = [];
+
+    function gravar(){
+        var linha = input_linha.value;
+        lista_linha.push(linha.toLowerCase());
+
+        var mensagem = '';
+        for(var i = lista_linha.length - 1; i >= 0; i--){
+            mensagem += `${lista_linha[i]}<br>`
+        }
+
+        div_mensagem.innerHTML = mensagem;
+    }
+
+    function pesquisar(){
+        var linha = input_pesquisar.value;
+        var mensagem = '';
+
+        var contador = 0;
+        // for (var i = lista_linha.length; i >= 0; i--){ // aqui é para se for na ordem inversa
+        for (var i = 1; i <= lista_linha.length; i++){
+            var linha_certa = lista_linha[i];
+            if(linha_certa == linha){
+                mensagem += ` ${i},`;
+                contador ++
+            }
+
+            if (contador > 0){
+                div_mensagem.innerHTML = `Você já pegou essa linha ${contador} vezes, nessa ordem ` + mensagem;
+            } else {
+                div_mensagem.innerHTML = `você nunca pegou essa linha`
+            }
+
+        }
+    }
+
+
+</script>

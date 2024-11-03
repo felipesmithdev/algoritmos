@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 08</title>
+</head>
+<body>
+
+    Informe um número(entre 0 e 200):
+    <input type="text" id="ipt_numero1">
+    <br>
+    <button onclick="calcular()">Viva o 7</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function calcular(){
+        var numero = Number(ipt_numero1.value);
+        var mensagem = "";
+
+        for(var i = 0; i <= numero; i++){
+            if (i % 7 == 0){
+                mensagem += `${i} <br>`
+            }
+        }
+        div_mensagem.innerHTML = mensagem
+    }
+
+
+
+</script>

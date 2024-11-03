@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    <button onclick="sortear()">Gerar uma nota de aluno entre 0 e 10</button> <br>
+    <button onclick="sortear_frequencia()">Gerar frequência de aluno entre 0 e 100</button> <br>
+    <button onclick="ver()">Ver situação</button>
+    
+</body>
+</html>
+<script>
+    
+    var nota = 0;
+    var frequencia = 0;
+
+    function sortear(){
+        var sortear_nota = Math.floor(Math.random() * 10 + 1);
+        nota = sortear_nota.toFixed(2);
+    }
+
+    function sortear_frequencia(){
+        var sortear_frequencia = Math.floor(Math.random() * 100 + 1);
+        frequencia = sortear_frequencia.toFixed(2);
+    }
+
+    function ver(){
+        var mensagem = "A nota sorteada do aluno será " + nota + " E a frequencia " + frequencia;
+        alert(mensagem)
+
+    }
+
+
+</script>

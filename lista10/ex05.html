@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+
+    <button onclick="jogar()">Jogar</button>
+    <div id="div_mensagem"></div>
+    <div id="div_foto"></div>
+    
+</body>
+</html>
+<script>
+
+    var jogador1 = 0;
+    var jogador2 = 0;
+
+    function jogar(){
+        var aleatorio1 = Math.floor(Math.random() * 3 + 1);
+        var aleatorio2 = Math.floor(Math.random() * 3 + 1);
+        var mensagem = "";
+
+        if (aleatorio1 == 1 && aleatorio2 == 2){
+            jogador2++;
+            mensagem += `Jogador 2 venceu! <br>`
+        } else if (aleatorio1 == 2 && aleatorio2 == 1){
+            jogador1++;
+            mensagem += `Jogador 1 venceu! <br>`
+        } else if (aleatorio2 == 1 && aleatorio1 == 3){
+            jogador2++;
+            mensagem += `Jogador 2 venceu! <br>`
+        } else if (aleatorio2 == 3 && aleatorio1 == 1){
+            jogador1 ++
+            mensagem += `Jogador 1 venceu! <br>`
+        } else if (aleatorio1 == 2 && aleatorio2 == 3){
+            jogador2++
+            mensagem += `Jogador 2 venceu! <br>`
+        } else if (aleatorio2 == 2 && aleatorio1 == 3){
+            jogador1++
+            mensagem += `Jogador 1 venceu! <br>`
+        } else if ( aleatorio1 == aleatorio2){
+            mensagem += `Empate <br>`
+        }
+        mensagem += `<br> jogador 1: ${jogador1} pontos <br> jogador 2: ${jogador2} pontos`
+        
+        div_foto.innerHTML = `<img style: display:"flex"; flex-direction: "row"; height="200px" src="${aleatorio1}.png" alt="" > VS <img height="200px" src="${aleatorio2}.png" alt="" >`;
+
+
+        div_mensagem.innerHTML = mensagem
+
+    }
+
+
+
+</script>

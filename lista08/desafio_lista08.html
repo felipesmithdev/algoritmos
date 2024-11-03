@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+    <style>
+        .base {
+            width: 500px;
+            height: 500px;
+            border: solid 2px black ;
+            border-radius: 10px;
+            }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            height: 20px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+        }
+        .centralizar-ipt {
+            display: flex;
+            justify-content: center;
+    
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+        }
+
+        .div-mensagem {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="base flex">
+        <h1>login</h1>
+        <p>Informe o usuário:</p>
+            <div class="centralizar-ipt">
+                <input type="text" id="ipt_usuario">
+            </div>
+        <br>
+        <p>Informe a sua senha:</p>
+            <div class="centralizar-ipt">
+                <input type="password" id="ipt_senha">
+            </div>
+        <br>
+        <p>Informe a informação pessoal:</p>
+            <div class="centralizar-ipt">
+                <input type="text" id="ipt_informacao">
+            </div>
+        <br>
+        <div class="box">
+            <button onclick="autenticar()">Autenticar</button>
+        </div>
+        <div class="div-mensagem" id="div_mensagem"></div>
+        <div class="div-mensagem" id="div_mensagem2"></div>
+        
+    </div>
+
+</body>
+</html>
+<script>
+
+    var tentativa = 3
+    var bloqueado = false
+
+    function autenticar(){
+        var usuario = ipt_usuario.value;
+        var senha = ipt_senha.value;
+        var i_pessoal = ipt_informacao.value;
+
+        var mensagem = "Falha na autenticação"
+        var mensagem2 = "Você ainda tem " + tentativa + " tentativa(s)"
+        tentativa --;
+
+        if(tentativa <= 0){
+            mensagem2 =  "Usuário BLOQUEADO! Procure seu gerente!"
+            bloqueado = true
+        }
+
+        if(bloqueado == false){
+
+            if((usuario == "ana" && senha == "braga") && (i_pessoal == "1949" || i_pessoal == "louro josé") ){
+                mensagem = "Usuário autenticado!"
+                tentativa = 3
+                mensagem2 = "Você ainda tem " + tentativa + " tentativa(s)"
+            } 
+        } else {
+            mensagem = ""
+        }
+        div_mensagem.innerHTML = mensagem
+        div_mensagem2.innerHTML = mensagem2
+    }
+
+
+</script>

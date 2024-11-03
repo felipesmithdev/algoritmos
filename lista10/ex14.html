@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <button onclick="ver()">Ver a Lua</button>
+    <div id="div_mensagem"></div>
+    <div id="div_foto"></div>
+
+</body>
+</html>
+<script>
+    function ver(){
+        var aleatorio = Math.floor(Math.random() * 31 + 1)
+        var mensagem = `Dia ${aleatorio}. Lua Crescente`;
+        var foto = `<img src="https://conteudo.imguol.com.br/c/noticias/c7/2022/01/20/lua-crescente-1642702356798_v2_3x4.jpg" alt="Lua crescente">`;
+
+        if (aleatorio >= 1 && aleatorio <= 7){
+            mensagem = `Lua nova`;
+            foto = `<img src="https://img.nsctotal.com.br/wp-content/uploads/2024/08/Lua-minguante-antecede-a-Lua-Nova.-Foto-Pexels-.png" alt="Lua nova">`;
+        } else if (aleatorio >= 8 && aleatorio <= 16){
+            mensagem = `Dia ${aleatorio}. Lua cheia`;
+            foto = `<img src="https://pedroengler.com/wp-content/uploads/2023/03/meditacao-guiada-da-lua-cheia-650x600.jpg" alt="Lua cheia">`;
+        } else if (aleatorio >= 17 && aleatorio <= 22){
+            mensagem = `Dia ${aleatorio}. Lua Minguante`;
+            foto = `<img src="https://p2.trrsf.com/image/fget/cf/1200/1200/middle/images.terra.com/2021/10/28/281738598-lua-minguante-em-leao-momento-de-conexao-com-o-seu-proprio-eu-18435.jpg" alt="Lua Minguante">`;
+        }
+        div_mensagem.innerHTML = mensagem;
+        div_foto.innerHTML = foto;
+    }
+
+
+
+</script>

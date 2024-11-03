@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16</title>
+</head>
+<body>
+    <span>Informe o seu nome:</span>
+    <input type="text" id="ipt_nome"> <br>
+    <span>Informe o seu numero da sorte:</span>
+    <input type="text" id="ipt_numero"> <br>
+    <button onclick="sortear()">Sortear</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    var tentativas = 0;
+
+    function sortear(){
+        var aleatorio = Math.floor(Math.random() * 10 + 1);
+        var numero_escolhido = Number(ipt_numero.value);
+        var nome = ipt_nome.value;
+        var mensagem = ``;
+
+        if (numero_escolhido > 10 || numero_escolhido < 1){
+            alert("Por favor, insira um número de 1 a 10")
+        }
+
+        tentativas ++;
+
+        if (numero_escolhido == aleatorio){
+            mensagem = `Parabéns, ${nome}, o seu número da sorte ${numero_escolhido} foi escolhido após ${tentativas} sorteios ! `
+            tentativas = 0;
+        }
+        div_mensagem.innerHTML = mensagem;
+    }
+
+
+</script>

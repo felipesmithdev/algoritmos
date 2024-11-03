@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16</title>
+</head>
+<body>
+    <span>Informe o seu nome:</span>
+    <input type="text" id="ipt_nome"> <br>
+    <span>Informe o seu primeiro numero da sorte:</span>
+    <input type="text" id="ipt_numero1"> <br>
+    <span>Informe o seu segundo numero da sorte(opcional):</span>
+    <input type="text" id="ipt_numero2"> <br>
+    <span>Informe o seu terceiro numero da sorte(opcional):</span>
+    <input type="text" id="ipt_numero3"> <br>
+    <button onclick="sortear()">Sortear</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    var tentativas = 0;
+
+    function sortear(){
+        var aleatorio = Math.floor(Math.random() * 100 + 1);
+        var numero_1 = Number(ipt_numero1.value);
+        var numero_2 = Number(ipt_numero2.value);
+        var numero_3 = Number(ipt_numero3.value);
+        var nome = ipt_nome.value;
+        var mensagem = ``;
+
+        if ((numero_1 > 100 || numero_1 < 1)|| (numero_2 >100 || numero_2 < 1) || (numero_3 > 100 || numero_3 < 1)){
+            alert("Por favor, insira um número de 1 a 100")
+        }
+
+        tentativas ++;
+
+        if (numero_1 == aleatorio || numero_2 == aleatorio || numero_3 == aleatorio){
+            mensagem = `Parabéns, ${nome}, o seu número da sorte ${aleatorio} foi escolhido após ${tentativas} sorteios ! `
+            tentativas = 0;
+        }
+        div_mensagem.innerHTML = mensagem;
+    }
+
+
+</script>

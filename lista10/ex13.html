@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerxicio 14</title>
+</head>
+<body>
+
+    <button onclick="sortear()">Sortear temperatura</button>    
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+    function sortear(){
+        var aleatorio = Math.floor(Math.random() * 41 - 20);
+        var mensagem = `Temperatura sorteada: ${aleatorio} <br>`;
+
+        if (aleatorio < 1){
+            mensagem += `Dá pra conservar qualquer alimento`
+        } else if (aleatorio >=1 && aleatorio <= 10){
+            mensagem += `Conserva a maioria dos alimentos`;
+        } else if (aleatorio > 10){
+            mensagem += `Estraga a maioria dos alimentos`;
+        }
+
+        div_mensagem.innerHTML = mensagem;
+
+    }
+
+
+</script>

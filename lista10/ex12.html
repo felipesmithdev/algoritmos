@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+
+    <style>
+        img {
+            height: 300px;
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button onclick="avaliar()">Avaliar</button>
+    <div id="div_mensagem"></div>
+    <div id="div_foto"></div>
+
+    <div id="div_mensagem2"></div>
+    <div id="div_foto2"></div>
+    
+</body>
+</html>
+<script>
+
+    var avaliacao = 0
+    var nota_acumulada = 0
+
+    
+    function avaliar(){
+        var aleatorio = Math.random() * 5;
+        var nota = aleatorio;
+        var mensagem = `Nota recebida: ${nota.toFixed(1)}`;
+
+        div_mensagem.innerHTML = mensagem;
+
+        var foto = `<img src="https://thumbs.dreamstime.com/z/emoticon-muito-feliz-22756611.jpg" alt="emoji muito feliz">`;
+        if(nota >= 0 && nota <= 0.5){
+            foto = `<img src="https://png.pngtree.com/png-vector/20240513/ourmid/pngtree-clipart-of-sad-emoji-png-image_12456564.png" alt="emoji triste">`
+        } else if (nota > 0.5 && nota <= 1.5){
+            foto = `<img src="https://images.emojiterra.com/openmoji/v13.1/512px/1f641.png" alt="emoji meio triste">`
+        } else if (nota > 1.5 && nota <= 3.5){
+            foto = `<img src="https://png.pngtree.com/png-vector/20240723/ourmid/pngtree-neutral-face-emoji-png-image_13220817.png" alt="emoji neutro">`
+        } else if (nota > 3.5 && nota <= 4.5){
+            foto = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNf26NxzMf-4pq0fGqp90ir5rV5sdKtzIgSw&s" alt="emoji feliz">`
+        }
+        div_foto.innerHTML = foto;
+
+        nota_acumulada += nota; 
+        avaliacao++;
+        var media = nota_acumulada / avaliacao;
+        var mensagem2 = `Média acumulada: ${media.toFixed(1)}`;
+        var foto2 = `<img src="https://png.pngtree.com/png-vector/20240723/ourmid/pngtree-neutral-face-emoji-png-image_13220817.png" alt="emoji neutro">`;
+
+        if (media >= 0 && media <= 3.33){
+            foto2 = `<img src="https://images.emojiterra.com/openmoji/v13.1/512px/1f641.png" alt="emoji meio triste">`
+        } else if (media > 3.33 && media <= 6.66){
+            foto2 = `<img src="https://png.pngtree.com/png-vector/20240723/ourmid/pngtree-neutral-face-emoji-png-image_13220817.png" alt="emoji neutro">`
+        } else if (media > 6.66 && nota <= 10){
+            foto2 = `<img src="https://thumbs.dreamstime.com/z/emoticon-muito-feliz-22756611.jpg" alt="emoji muito feliz">`;
+        }
+        div_mensagem2.innerHTML = mensagem2;
+        div_foto2.innerHTML = foto2;
+    }
+
+
+</script>

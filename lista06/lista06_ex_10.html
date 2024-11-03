@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 10</title>
+</head>
+<body>
+
+    <span>Informe a sua idade:</span>
+    <input type="number" id="ipt_idade">
+    <br>
+    <span>Informe o seu salário:</span>
+    <input type="number" id="ipt_salario">
+    <br>
+    <button onclick="analisar()">Analisar situação</button>
+    <br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function analisar(){
+        var idade = Number(ipt_idade.value);
+        var salario = Number(ipt_salario.value);
+
+        var mensagem = "Menor de idade e liso"
+
+        if (idade < 18 && salario >= 2500){
+            mensagem = "Menor de idade e ostentação"
+        } else if (idade >= 18 && salario < 3500){
+            mensagem = "Maior de idade e liso"
+        } else if ((idade >= 18) && (salario >= 3500 && salario <= 7000)){
+            mensagem = "Maior de idade e ostentação"
+        } else if (idade >= 18 && salario > 7000){
+            mensagem = "Maior de idade e mega ostentação"
+        }
+        div_mensagem.innerHTML = mensagem
+    }
+
+
+
+
+</script>

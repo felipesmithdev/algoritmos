@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 07</title>
+    <style>
+
+        .border {
+            background-color: rgb(232, 241, 241);
+            border: solid 1px rgb(144, 144, 236);
+            border-radius: 20px;
+            opacity: 80%;
+        }
+        .flex {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 300px;
+        }
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+        span {
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button {
+            height: 20px;
+            width: 50px;
+       }
+       .centralizar-botao {
+            display: flex;
+            justify-content: center;
+       }
+       .centralizar-input{
+        display: flex;
+        justify-content: center;
+       }
+
+
+
+    </style>
+</head>
+<body>
+
+   <div class="border flex">
+    <h1>Login</h1>
+       <span>Informe o Usuário:</span>
+       <div class="centralizar-input"><input type="text" id="ipt_usuario"></div>
+       <br>
+       <span>Informe a senha:</span>
+       <div class="centralizar-input"><input type="password" id="ipt_senha"></div>
+       <br>
+       <div class="centralizar-botao"><button onclick = "entrar()">Entrar</button></div>
+   </div>
+
+    
+</body>
+</html>
+<script>
+    function entrar(){
+        var usuario = ipt_usuario.value;
+        var senha = ipt_senha.value;
+
+        var mensagem = "Falha na autenticação"
+
+        if(usuario == "SPTech" && senha == "digital"){
+            mensagem = "Usuário autenticado com sucesso"
+        }
+        alert(mensagem);
+    }
+
+</script>

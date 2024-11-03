@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 09</title>
+</head>
+<body>
+
+    <span>Informe a altura inicial:</span>
+    <input type="number" id="ipt_altura_inicial">
+    <br>
+    <span>Informe a altura final:</span>
+    <input type="number" id="ipt_altura_final">
+    <br>
+    <span>Informe o nome do usuario:</span>
+    <input type="text" id="ipt_nome">
+    <br>
+    <span>Informe a altura do candidato:</span>
+    <input type="number" id="ipt_altura_candidato">
+    <br>
+    <button onclick="verificar()">Verificar candidato</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    
+    function verificar(){
+        var a_inicial = Number(ipt_altura_inicial.value);
+        var a_final = Number(ipt_altura_final.value);
+        var nome = ipt_nome.value;
+        var a_candidato = Number(ipt_altura_candidato.value);
+
+         var mensagem = "";
+         var mensagem2 = "";
+
+         if((a_inicial  <= 1 || a_inicial >= 1) && (a_final <= a_inicial)){
+             mensagem = "Intervalo da altura de seleção é inválida! A altura deve ser maior que 1 e a altura final deve ser maior que a altura inicial"
+             alert(mensagem)
+         } else if (a_inicial >= 1 && a_final > a_inicial){
+             if (a_candidato >= a_inicial && a_candidato <= a_final){
+                 mensagem2 = "O candidato " + nome + ", com altura de " + a_candidato + " metros, participará do processo de seleção de piloto"
+             } else {
+                 mensagem2 = "Infelizmente, o candidato " + nome + "com altura de " + a_candidato + " metros, não atende os requisitos da seleção"
+             }
+         } 
+         div_mensagem.innerHTML = mensagem2
+        
+    }
+    // outra maneira de verificar 
+    // var mensagem = ""
+    // var mensagem2 = "Intervalo da altura de seleção é inválida! A altura deve ser maior que 1 e a altura final deve ser maior que a altura inicial"
+
+    //     if (a_inicial >= 1 && a_final > a_inicial){
+    //         if (a_candidato >= a_inicial && a_candidato <= a_final){
+    //             mensagem = "O candidato " + nome + ", com altura de "+ a_candidato + " metros, participará do processo de seleção de piloto"
+    //         } else {
+    //             mensagem = "Infelizmente, o candidato " + nome + "com altura de " + a_candidato + " metros, não atende os requisitos da seleção"
+    //         }
+    //         div_mensagem.innerHTML = mensagem
+    //     } else {
+    //         alert(mensagem2)
+    //         mensagem = ""
+    //     }
+
+
+
+</script>

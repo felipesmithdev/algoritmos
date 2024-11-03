@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+
+    <button onclick="sortear()">Sortear time</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+    function sortear(){
+        var aleatorio = Math.random();
+        var mensagem = `${aleatorio} <br>`
+
+        if (aleatorio >= 0.75){
+            mensagem += `<img height="150px" src="https://upload.wikimedia.org/wikipedia/pt/1/1f/Mancha-AlviVerde.jpg" alt="">`
+        } else if (aleatorio >= 0.50) {
+            mensagem += `<img height="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzpGRZhkKe4BYF5teXPqlFRyfODTOKwa2uQw&s" alt="">`
+        } else if (aleatorio >= 0.25) {
+            mensagem += `<img height="150px" src="https://independentenet.com.br/wp-content/uploads/2023/06/download.png" alt="">`           
+        } else if (aleatorio >= 0) {
+            mensagem += `<img height="150px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Logotipo_Torcida_Jovem_do_Santos_F._C..jpg/800px-Logotipo_Torcida_Jovem_do_Santos_F._C..jpg" alt="">`  
+        }
+
+        div_mensagem.innerHTML = mensagem;
+    }
+
+
+
+</script>

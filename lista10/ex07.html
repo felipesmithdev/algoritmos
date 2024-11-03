@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+</head>
+<body>
+
+    <button onclick="sortear()">Quero um numero cabalistico!</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function sortear(){
+        var aleatorio = Math.floor(Math.random() * 15 + 1);
+        var mensagem = `${aleatorio} <br> Ah, me dá um número bom na próxima!`;
+
+        if(aleatorio == 3 || aleatorio == 4 || aleatorio == 7 || aleatorio == 10 || aleatorio == 12){
+            mensagem = `${aleatorio} <br> Eu S2 números cabalisticos!`
+        }
+        div_mensagem.innerHTML = mensagem
+    }
+
+
+</script>

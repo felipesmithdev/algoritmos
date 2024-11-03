@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 1</title>
+</head>
+<body>
+
+    Fruta:
+    <input type="text" id="input_fruta"> <br>
+    <button onclick="pesquisar()">Pesquisar</button>    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    let lista_frutas = ["banana","pera","maçaa","morango","pessego"];
+    
+    function pesquisar(){
+        let fruta = input_fruta.value;
+        let incluso = lista_frutas.includes( fruta.toLowerCase())
+        let mensagem = `A fruta ${fruta} existe na lista`;
+
+        if (!incluso){
+            mensagem = `A fruta ${fruta} NÃO existe na lista`;
+        }
+
+        div_mensagem.innerHTML = mensagem;
+    }
+</script>

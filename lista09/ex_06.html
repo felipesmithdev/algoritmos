@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    
+    Informe quem você mais ama na vida:
+    <input type="text" id="ipt_nome">
+    <br>
+    Informe o quanto você ama essa pessoa (números inteiros):
+    <input type="text" id="ipt_numero">
+    <br>
+    <button onclick="expressar()">Expressar amor</button>
+    <div id="div_resultado"></div>
+    
+</body>
+</html>
+<script>
+    function expressar(){
+        var nome = ipt_nome.value;
+        var amor = Number(ipt_numero.value);    
+        var mensagem = ""
+
+        for(var i = 0; i < amor; i++){
+            mensagem += `${i + 1}- ${nome}, aceita construir uma historia comigo ? <br>`
+        } 
+        div_resultado.innerHTML = mensagem;
+    }
+
+
+
+</script>

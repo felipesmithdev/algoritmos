@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex_02</title>
+</head>
+<body>
+
+    algoritmos :
+    <br>
+    <button onclick="dizer()">Diga algo sobre a matéria de algoritmos</button>
+    <div id="div_resultado"></div>
+    
+</body>
+</html>
+<script>
+
+    function dizer(){
+        var resultado = ""
+        for(var time = 0; time <= 7; time ++){
+            resultado += "Algoritmos é muito bom" + "<br>";
+        }
+        div_resultado.innerHTML = `${resultado}`
+    }
+
+
+</script>

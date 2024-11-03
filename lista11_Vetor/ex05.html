@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Informe os filmes que mais gosta na sequencia do maior pro menor:
+    <br> <input type="text" id="input_filmes"> <br>
+    <button onclick="cadastrar()">Cadastrar filme</button> <br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+
+    let lista_filmes = [];
+
+    function cadastrar(){
+        let filme = input_filmes.value;
+        lista_filmes.push(filme);
+        let favorito = lista_filmes[0];
+        
+        if (lista_filmes.length > 3){
+            let terceiro = `Ainda não existe`;
+        }
+        
+        let terceiro = lista_filmes[2];
+        let mensagem = `Seu filme favorito: ${favorito} <br> Seu terceiro filme favorito: ${terceiro} <br> Total de filmes cadastrados: ${lista_filmes.length}`
+        div_mensagem.innerHTML = mensagem;
+    }
+</script>

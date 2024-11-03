@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .div_style {
+            width:500px;
+            height: 170px;
+            background-color: rgb(255, 255, 255);
+            border: solid 2px rgb(0, 0, 0);
+            margin: 20px;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        .base {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .botao {
+             height: 20px;
+             width:100%;
+             justify-content: center;
+             display: flex;
+
+        }
+        input {
+            display: flex;
+            height: 10%;
+            width: 100%;
+            justify-content: center;
+
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p {
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .centralizar {
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="div_style base">
+
+        <h1>Avaliação de atendimento</h1>
+        <p>Informe a nota do atendimento:</p>
+        <br>
+        <input type="number" id="ipt_nota">
+        <br>
+        <div class="botao">
+            <button class="centralizar" onclick="avaliar()">Avaliar atendimento</button>
+        </div>
+        <div id="div_mensagem"></div>
+        
+    </div>
+</body>
+</html>
+<script>
+
+    function avaliar(){
+        var nota = Number(ipt_nota.value);
+        var mensagem = "Nota Inválida"
+
+        if(nota >= 0 && nota < 5){
+            mensagem = "Não aprovado"
+        } else if(nota >= 5 && nota <= 6){
+            mensagem = "Neutro"
+        } else if (nota > 6 && nota <= 10){
+            mensagem = "Aprovado"
+        }
+
+        div_mensagem.innerHTML = mensagem
+    }
+
+</script>
+
+

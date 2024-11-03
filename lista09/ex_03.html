@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 03</title>
+</head>
+<body>
+
+    <button onclick="falar()">Fale algo sobre algoritmos</button>
+    <div id="div_resultado"></div>
+    
+</body>
+</html>
+<script>
+
+    function falar(){
+        var resultado = ""
+        for(var time = 0; time <= 7; time ++){
+            resultado += time + "." + "Boa tarde" + "<br>";
+        }
+        div_resultado.innerHTML = `${resultado}`
+    }
+</script>
